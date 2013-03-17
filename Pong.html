@@ -1,0 +1,32 @@
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="pong.css"/>
+	    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+        <script>
+            $(document).keydown(function(event) {
+                switch (event.keyCode) {
+                    case 37: recx -= recdx; break;
+                    case 39: recx += recdx; break;
+                }
+                if(recx < 0 || recx > 380){
+                	recdx = -recdx;
+                }
+            });
+        </script>
+    <div id="background2">
+	<center>
+		<h1>Wall ball</h1>
+		<canvas id="screen" width="480" height="320" style="border: black 2px solid"></canvas>
+		<script src="Pong.js"></script>
+	</center>
+	</div>
+	</head>
+	<div id="background">
+	<body>
+	<center>
+		<input type="button" value="Play!" onclick="init();"/>
+		<input type="button" value="Reset!" onclick="history.go(0)"/>
+	</center>
+	</body>
+	</div>
+</html>
